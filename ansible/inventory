@@ -1,0 +1,8 @@
+ec2micro ansible_host=18.195.255.245 ansible_user=admin
+
+[servers]
+ec2micro
+
+
+[servers:vars]
+ansible_ssh_private_key_file=~/.ssh/aws-imalik8088.pem

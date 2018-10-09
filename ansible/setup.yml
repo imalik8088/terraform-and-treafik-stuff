@@ -1,0 +1,6 @@
+---
+- hosts: servers
+  roles:
+    - { role: geerlingguy.docker, tags: [ 'docker' ] , become: yes}
+  gather_facts: yes
+
