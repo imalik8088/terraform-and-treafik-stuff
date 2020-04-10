@@ -2,5 +2,7 @@
 - hosts: servers
   roles:
     - { role: geerlingguy.docker, tags: [ 'docker' ] , become: yes}
-  gather_facts: yes
+    - { role: common, tags: [ 'common' ] , become: yes}
+    - { role: treafik, tags: [ 'treafik' ] }
+  gather_facts: no
 

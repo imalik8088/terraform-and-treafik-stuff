@@ -5,4 +5,6 @@
 ```bash
 ansible all -m ping -o
 ansible-galaxy install --roles-path . geerlingguy.docker
+ansible-playbook setup.yml
+ansible-playbook setup.yml --tags "common"
 ```

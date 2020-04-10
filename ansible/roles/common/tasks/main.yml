@@ -1,0 +1,10 @@
+---
+- name: add aliases
+  blockinfile:
+    path: /home/admin/.bashrc
+    block: |
+      alias ll="ls -al"
+      alias dps="docker ps"
+      alias dim="docker images"
+      alias dpl="docker logs -f $1"
+      alias dcps="docker-compose ps"

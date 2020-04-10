@@ -1,0 +1,17 @@
+---
+
+- name: copy docker-compose file
+  template:
+    src: docker-compose.yml
+    dest: /home/admin/
+  register: compose_file
+
+- name: docker-compose up
+  when: compose_file.changed
+  command: docker-compose --file /home/admin/docker-compose.yml up -d
+
+- command: docker-compose --file /home/admin/docker-compose.yml ps
+  register: output
+
+- debug:
+    var: output.stdout
